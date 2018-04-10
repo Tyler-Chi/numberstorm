@@ -97,5 +97,14 @@
 }
 
 .fa-spinner {
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: 1000px;
+}
+
+.solution-area {
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+    width: 80%;
+    margin-top: 30px;
 }

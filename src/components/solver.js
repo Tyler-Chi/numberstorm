@@ -62,16 +62,21 @@ class Solver extends React.Component {
 
     solutionArea(){
 
-        if (this.state.loading === true ){
+        // if (this.state.loading === true ){
 
+        if (this.state.loading === true){
             return (
-                <i class="fas fa-spinner fa-pulse"></i>
+                <div className = 'solution-area'>
+                    <i class="fas fa-spinner fa-pulse"></i>
+                </div>
             );
 
         } else {
 
             return (
-                <p> {this.state.solutionString} </p>
+                <div className='solution-area'>
+                    <p> {this.state.solutionString} </p>
+                </div>
             );
         }
 
