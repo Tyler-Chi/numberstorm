@@ -9,13 +9,15 @@ class Solver extends React.Component {
         this.state = {
             numbers: [0,0,0,0],
             solution: '',
-            solutionString:''
+            solutionString:'',
+            loading: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeNumber = this.changeNumber.bind(this);
         this.generateRandom = this.generateRandom.bind(this);
+        this.solutionArea = this.solutionArea.bind(this);
     }
 
     
@@ -28,9 +30,10 @@ class Solver extends React.Component {
 
     handleSubmit(){
         let currentNumberString = this.state.numbers.join('&');
+        this.setState({loading: true});
         axios.get('https://mathology.herokuapp.com/api/solutions/' + currentNumberString )
             .then(res => {
-                this.setState({solution: res, solutionString: res.data.solution});
+                this.setState({solution: res, solutionString: res.data.solution, loading: false});
             });
     }
 
@@ -55,6 +58,22 @@ class Solver extends React.Component {
 
         } 
         
+    }
+
+    solutionArea(){
+
+        if (this.state.loading === true ){
+
+            return (
+                <i class="fas fa-spinner fa-pulse"></i>
+            );
+
+        } else {
+
+            return (
+                <p> {this.state.solutionString} </p>
+            );
+        }
 
 
     }
@@ -97,12 +116,8 @@ class Solver extends React.Component {
                         <p className = "solver-submit" onClick = {this.handleSubmit}> Submit Numbers! </p> 
                         <p className = "solver-submit" onClick={() => this.generateRandom(0)}> Randomize! </p> 
                     </div>
-
-
-                    <p> {this.state.solutionString} </p>
-
-                <i class="fas fa-spinner fa-pulse"></i>
-
+             
+                    {this.solutionArea()}
               
             </div>
         );

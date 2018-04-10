@@ -46,7 +46,9 @@
     width: 130px;
     height: 250px;
     font-style: bolder;
-    border: 1px solid black;
+    border: 0.5px solid rgb(181, 181, 181);
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    
 }
 
 .solver-submit {
@@ -94,3 +96,6 @@
     margin-bottom: -26px;
 }
 
+.fa-spinner {
+    font-size: 30px;
+}
