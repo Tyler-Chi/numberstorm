@@ -14,7 +14,7 @@ class Solver extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    
+        this.changeNumber = this.changeNumber.bind(this);
     }
 
     
@@ -33,6 +33,14 @@ class Solver extends React.Component {
             });
     }
 
+    changeNumber(index,direction){
+        let currentNumber = this.state.numbers[index];
+        currentNumber += direction;
+        let currentArray = this.state.numbers;
+        currentArray[index] = currentNumber;
+        this.setState({numbers: currentArray});
+    }
+
 
     render(){
 
@@ -42,10 +50,34 @@ class Solver extends React.Component {
             <div className="solver">
                     <p className="solver-title"> See if 4 numbers can make 24! </p>
 
-                    <input type='integer' value={this.state.numbers[0]} onChange={(event) => this.handleChange(event, 0)}/> 
-                    <input type='integer' value={this.state.numbers[1]} onChange={(event) => this.handleChange(event, 1)} /> 
-                    <input type='integer' value={this.state.numbers[2]} onChange={(event) => this.handleChange(event, 2)} /> 
-                    <input type='integer' value={this.state.numbers[3]} onChange={(event) => this.handleChange(event, 3)} /> 
+
+
+                    <div className = 'solver-input-area'>
+                        <div>
+                            <p onClick={()=> this.changeNumber(0,1)}> + </p>
+                                <input type='integer' value={this.state.numbers[0]} onChange={(event) => this.handleChange(event, 0)}/> 
+                            <p onClick={()=> this.changeNumber(0, -1)}> - </p>
+                        </div>
+
+                        <div>
+                            <p onClick={() => this.changeNumber(1, 1)}> + </p>
+                                <input type='integer' value={this.state.numbers[1]} onChange={(event) => this.handleChange(event, 1)} />    
+                            <p onClick={() => this.changeNumber(1, -1)}> - </p>
+                        </div>
+
+                        <div>
+                            <p onClick={() => this.changeNumber(2, 1)}> + </p>
+                                <input type='integer' value={this.state.numbers[2]} onChange={(event) => this.handleChange(event, 2)} /> 
+                            <p onClick={() => this.changeNumber(2, -1)}> - </p>
+                        </div>
+
+                        <div>
+                            <p onClick={() => this.changeNumber(3, 1)}> + </p>
+                                <input type='integer' value={this.state.numbers[3]} onChange={(event) => this.handleChange(event, 3)} /> 
+                            <p onClick={() => this.changeNumber(3, -1)}> - </p>      
+                        </div>
+                    </div>
+
 
                     <p onClick = {this.handleSubmit}> SUBMIT </p> 
 
