@@ -15,6 +15,7 @@ class Solver extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeNumber = this.changeNumber.bind(this);
+        this.generateRandom = this.generateRandom.bind(this);
     }
 
     
@@ -41,6 +42,22 @@ class Solver extends React.Component {
         this.setState({numbers: currentArray});
     }
 
+    generateRandom(index){
+        let randomNumber = Math.round(Math.random() * 12 + 1);
+        let currentArray = this.state.numbers;
+        currentArray[index] = randomNumber;
+        this.setState({numbers: currentArray});
+
+        if (index < 3 ){
+            
+            setTimeout( () => {this.generateRandom(index + 1);}, 500 );
+
+        } 
+        
+
+
+    }
+
 
     render(){
 
@@ -54,13 +71,13 @@ class Solver extends React.Component {
 
                     <div className = 'solver-input-area'>
                         <div>
-                            <p onClick={()=> this.changeNumber(0,1)}> + </p>
+                            <p className = 'solver-up' onClick={()=> this.changeNumber(0,1)}> + </p>
                                 <input type='integer' value={this.state.numbers[0]} onChange={(event) => this.handleChange(event, 0)}/> 
                             <p onClick={()=> this.changeNumber(0, -1)}> - </p>
                         </div>
 
                         <div>
-                            <p onClick={() => this.changeNumber(1, 1)}> + </p>
+                            <p className='solver-up' onClick={() => this.changeNumber(1, 1)}> + </p>
                                 <input type='integer' value={this.state.numbers[1]} onChange={(event) => this.handleChange(event, 1)} />    
                             <p onClick={() => this.changeNumber(1, -1)}> - </p>
                         </div>
@@ -80,6 +97,8 @@ class Solver extends React.Component {
 
 
                     <p onClick = {this.handleSubmit}> SUBMIT </p> 
+
+                    <p onClick={() => this.generateRandom(0)}> RANDOM </p> 
 
                     <p> {this.state.solutionString} </p>
 
