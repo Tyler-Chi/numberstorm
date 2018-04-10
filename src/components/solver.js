@@ -67,32 +67,29 @@ class Solver extends React.Component {
         return(
             <div className="solver">
                     <p className="solver-title"> See if 4 numbers can make 24! </p>
-
-                <i class="fab fa-accusoft"></i>
-
                     <div className = 'solver-input-area'>
                         <div>
-                            <p className = 'solver-up' onClick={()=> this.changeNumber(0,1)}> + </p>
-                                <input type='integer' value={this.state.numbers[0]} onChange={(event) => this.handleChange(event, 0)}/> 
-                            <p onClick={()=> this.changeNumber(0, -1)}> - </p>
+                            <p className='fas fa-angle-up'  onClick={()=> this.changeNumber(0,1)} />
+                                    <input type='integer' value={this.state.numbers[0]} onChange={(event) => this.handleChange(event, 0)}/> 
+                            <p className='fas fa-angle-down' onClick={()=> this.changeNumber(0, -1)} />
                         </div>
 
                         <div>
-                            <p className='solver-up' onClick={() => this.changeNumber(1, 1)}> + </p>
+                            <p className='fas fa-angle-up' onClick={() => this.changeNumber(1, 1)} />
                                 <input type='integer' value={this.state.numbers[1]} onChange={(event) => this.handleChange(event, 1)} />    
-                            <p onClick={() => this.changeNumber(1, -1)}> - </p>
+                            <p className='fas fa-angle-down' onClick={() => this.changeNumber(1, -1)} />
                         </div>
 
                         <div>
-                            <p onClick={() => this.changeNumber(2, 1)}> + </p>
+                            <p className='fas fa-angle-up' onClick={() => this.changeNumber(2, 1)} />
                                 <input type='integer' value={this.state.numbers[2]} onChange={(event) => this.handleChange(event, 2)} /> 
-                            <p onClick={() => this.changeNumber(2, -1)}> - </p>
+                            <p className='fas fa-angle-down' onClick={() => this.changeNumber(2, -1)} />
                         </div>
 
                         <div>
-                            <p onClick={() => this.changeNumber(3, 1)}> + </p>
+                            <p className = 'fas fa-angle-up' onClick={() => this.changeNumber(3, 1)} />
                                 <input type='integer' value={this.state.numbers[3]} onChange={(event) => this.handleChange(event, 3)} /> 
-                            <p onClick={() => this.changeNumber(3, -1)}> - </p>      
+                            <p className='fas fa-angle-down' onClick={() => this.changeNumber(3, -1)} />
                         </div>
                     </div>
 
@@ -103,6 +100,8 @@ class Solver extends React.Component {
 
 
                     <p> {this.state.solutionString} </p>
+
+                <i class="fas fa-spinner fa-pulse"></i>
 
               
             </div>
