@@ -9,7 +9,7 @@ class Solver extends React.Component {
         this.state = {
             numbers: [0,0,0,0],
             solution: '',
-            solutionString:'3.0 * 4.0 , 10.0 / 5.0 , 2.0 * 12.0',
+            solutionString:'',
             loading: false
         };
 
