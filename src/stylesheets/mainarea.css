@@ -4,4 +4,6 @@
     background-position: center center;
     height: 100%;
     /* background: red; */
+    display: flex;
+    justify-content: center;
 }

@@ -1,0 +1,13 @@
+.solver{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(196, 195, 195, 0.5);
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /* opacity: 0.5; */
+}
+
+.solver-area {
+    opacity: 2;
+}
