@@ -9,7 +9,7 @@ class Solver extends React.Component {
         this.state = {
             numbers: [0,0,0,0],
             solution: '',
-            solutionString:'',
+            solutionString:'3.0 * 4.0 , 10.0 / 5.0 , 2.0 * 12.0',
             loading: false
         };
 
@@ -66,16 +66,16 @@ class Solver extends React.Component {
 
         if (this.state.loading === true){
             return (
-                <div className = 'solution-area'>
+                <div className = 'spinner-area'>
                     <i class="fas fa-spinner fa-pulse"></i>
                 </div>
             );
 
-        } else {
+        } else if ( this.state.solutionString.length > 0){
 
             return (
-                <div className='solution-area'>
-                    <p> {this.state.solutionString} </p>
+                <div className='solution-string-area'>
+                    <p className="solution-string"> {this.state.solutionString} </p>
                 </div>
             );
         }

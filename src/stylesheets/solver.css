@@ -101,10 +101,22 @@
     font-weight: 1000px;
 }
 
-.solution-area {
+.spinner-area {
     display: flex;
     justify-content: center;
-    /* background-color: red; */
     width: 80%;
     margin-top: 30px;
+}
+
+.solution-string-area {
+    width: 50%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
 }
