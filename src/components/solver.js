@@ -8,7 +8,8 @@ class Solver extends React.Component {
         super(props);
         this.state = {
             numbers: [0,0,0,0],
-            solution: ''
+            solution: '',
+            solutionString:''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -26,10 +27,10 @@ class Solver extends React.Component {
 
     handleSubmit(){
         let currentNumberString = this.state.numbers.join('&');
-        axios.get('https://mathology.herokuapp.com/api/solutions')
+        axios.get('https://mathology.herokuapp.com/api/solutions/' + currentNumberString )
             .then(res => {
-                console.log(res);
-            })
+                this.setState({solution: res, solutionString: res.data.solution});
+            });
     }
 
 
@@ -47,6 +48,8 @@ class Solver extends React.Component {
                     <input type='integer' value={this.state.numbers[3]} onChange={(event) => this.handleChange(event, 3)} /> 
 
                     <p onClick = {this.handleSubmit}> SUBMIT </p> 
+
+                    <p> {this.state.solutionString} </p>
 
               
             </div>
