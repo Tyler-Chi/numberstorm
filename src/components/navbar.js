@@ -21,7 +21,7 @@ class Navbar extends React.Component {
             <div className="navbar-area">
 
                 <p className="navbar-title">
-                    TITLE
+                    NumberStorm
                 </p>
 
                 <div className="navbar-buttons" >

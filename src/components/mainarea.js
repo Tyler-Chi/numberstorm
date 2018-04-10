@@ -6,7 +6,6 @@ class Mainarea extends React.Component {
     render(){
         return (
             <div className = 'main-area'>
-                Hello
             </div>
         );
     }
