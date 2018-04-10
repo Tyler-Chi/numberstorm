@@ -46,3 +46,29 @@
     height: 250px;
     font-style: bolder;
 }
+
+.solver-submit {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #3a8a66;
+    box-shadow: 3px 3px;
+    transition: 0.2s;
+}
+
+.solver-submit:hover {
+    box-shadow: 0px 0px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.solver-button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+}

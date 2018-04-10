@@ -47,6 +47,7 @@ class Solver extends React.Component {
         let currentArray = this.state.numbers;
         currentArray[index] = randomNumber;
         this.setState({numbers: currentArray});
+        this.setState({solutionString: ''});
 
         if (index < 3 ){
             
@@ -67,7 +68,7 @@ class Solver extends React.Component {
             <div className="solver">
                     <p className="solver-title"> See if 4 numbers can make 24! </p>
 
-
+                <i class="fab fa-accusoft"></i>
 
                     <div className = 'solver-input-area'>
                         <div>
@@ -95,10 +96,11 @@ class Solver extends React.Component {
                         </div>
                     </div>
 
+                    <div className = 'solver-button-area'>
+                        <p className = "solver-submit" onClick = {this.handleSubmit}> Submit Numbers! </p> 
+                        <p className = "solver-submit" onClick={() => this.generateRandom(0)}> Randomize! </p> 
+                    </div>
 
-                    <p onClick = {this.handleSubmit}> SUBMIT </p> 
-
-                    <p onClick={() => this.generateRandom(0)}> RANDOM </p> 
 
                     <p> {this.state.solutionString} </p>
 
