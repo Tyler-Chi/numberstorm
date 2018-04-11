@@ -117,6 +117,10 @@ class Game extends React.Component {
 
             const { currentQuestion } = this.state;
             const numbers = currentQuestion.numbers.split("&");
+            let number0 = numbers[0];
+            let number1 = numbers[1];
+            let number2 = numbers[2];
+            let number3 = numbers[3];
 
             return (
             
@@ -125,18 +129,18 @@ class Game extends React.Component {
 
                         <div className="two-cards">
                             <div>
-                                {numbers[0]}
+                                {number0}
                             </div>
                             <div>
-                                {numbers[1]}
+                                {number1}
                             </div>
                         </div>
                         <div className="two-cards">
                             <div>
-                                {numbers[2]}
+                                {number2}
                             </div>
                             <div>
-                                {numbers[3]}
+                                {number3}
                             </div>
                         </div>
                         <div className="optional">
