@@ -13,7 +13,7 @@ import reduxThunk from "redux-thunk";
 const store = createStore(
     reducers,
     {},
-    applyMiddleware(reduxThunk, promise)
+    applyMiddleware(reduxThunk, promise,logger)
 )
 
 

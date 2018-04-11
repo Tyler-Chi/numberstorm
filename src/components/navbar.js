@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../stylesheets/navbar.css';
+import * as actions from '../actions';
+
 
 class Navbar extends React.Component {
 
@@ -17,6 +19,8 @@ class Navbar extends React.Component {
 
     render() {
 
+        console.log(this.props);
+
         return (
             <div className="navbar-area">
 
@@ -25,7 +29,7 @@ class Navbar extends React.Component {
                 </p>
 
                 <div className="navbar-buttons" >
-                    <p >
+                    <p onClick ={() => this.props.navigate('solver')}>
                         Solver
                     </p>
 
@@ -33,7 +37,7 @@ class Navbar extends React.Component {
                         New Problem
                     </p>
 
-                    <p  >
+                    <p onClick={()=> this.props.navigate('list')}>
                         List of Problems
                     </p>
 
@@ -61,4 +65,4 @@ const mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps,actions)(Navbar);

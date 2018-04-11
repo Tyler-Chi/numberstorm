@@ -1,17 +1,51 @@
 import React from 'react';
 import '../stylesheets/mainarea.css';
 import Solver from './solver';
+import { connect } from 'react-redux';
 
 
 class Mainarea extends React.Component {
 
+    constructor(props){
+        super(props);
+        this.router = this.router.bind(this);
+    }
+
+    router(){
+        switch (this.props.state.navigation){
+
+            case 'solver':
+                return (
+                    <Solver />
+                );
+            
+            case 'list':
+                return (
+                    <p> hello world </p>
+                );
+            
+
+            default:
+                return (
+                    <Solver />
+                );
+        }
+    }
+
     render(){
         return (
             <div className = 'main-area'>
-                <Solver />
+                {this.router()}
             </div>
         );
     }
 }
 
-export default Mainarea;
+const mapStateToProps = (state) => {
+    return {
+        state
+    };
+};
+
+
+export default connect(mapStateToProps)(Mainarea);

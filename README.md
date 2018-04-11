@@ -14,7 +14,7 @@ I built a backend on Rails, which is hosted on a seperate Heroku. The backend ha
 
 Here is the link to the github repo for the backend:
 
-[backend repostiroy](https://github.com/Tyler-Chi/twentyfour)
+[backend repositroy](https://github.com/Tyler-Chi/twentyfour)
 
 Enjoy :].
 
