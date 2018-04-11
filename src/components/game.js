@@ -12,7 +12,7 @@ class Game extends React.Component {
             solutions: [],
             currentQuestion: {},
             gameCycle: false,
-            p1points: 3,
+            p1points: 0,
             p2points: 0,
             message:'',
             buttonPressed: 0,
@@ -26,6 +26,7 @@ class Game extends React.Component {
         this.p2input = this.p2input.bind(this);
         this.nextQuestionButton = this.nextQuestionButton.bind(this);
         this.newGame = this.newGame.bind(this);
+        this.instructions = this.instructions.bind(this);
     }
 
     componentWillMount() {
@@ -68,7 +69,7 @@ class Game extends React.Component {
     nextQuestionButton(){
         if(this.state.nextQuestionButton){
             return (
-                <p onClick = {this.newTurn}> Next Question!</p>
+                <p onClick = {this.newTurn}> Next Question! [V]</p>
             );
         }
     }
@@ -85,6 +86,14 @@ class Game extends React.Component {
 
     }
 
+    instructions(letter){
+            return (
+                <div className = "instructions-area">
+                    <p> Press  </p> <p className="letter"> {letter} </p> <p>  to buzz in! </p>
+                </div>
+            );
+    }
+
     newGame(){
         let questionIdx = Math.round(Math.random() * this.state.solutions.length - 1);
 
@@ -96,7 +105,7 @@ class Game extends React.Component {
     gameLogic(){
         if (this.state.gameCycle === false && this.state.newGame === false ){
             return (
-                <p onClick={this.newTurn}> Play Game! </p>
+                <div className="start-game" > <p onClick={this.newTurn} className="start-game-text"> Start Game! </p> </div>
             );
         }
 
@@ -106,9 +115,9 @@ class Game extends React.Component {
             const numbers = currentQuestion.numbers.split("&");
 
             return (
-                <div>
+            
                     <div className='card-area'>
-                        <p> Cards: </p>
+                        <p className="card-area-title"> Cards: </p>
 
                         <div className="two-cards">
                             <div>
@@ -126,15 +135,12 @@ class Game extends React.Component {
                                 {numbers[3]}
                             </div>
                         </div>
-
-                        <p> {this.state.message} </p>
-
+                        <div className="optional">
+                            <p onClick={this.newGame}> Play again! </p>
+                        </div>
                     </div>
-
-
-                    <p onClick={this.newGame}> Play again! </p>
                    
-                </div>
+            
             );
         }
 
@@ -154,7 +160,7 @@ class Game extends React.Component {
 
             return (
                 <div className = 'card-area'> 
-                    <p> Cards: </p> 
+                    <p className='card-area-title'> Cards: </p> 
 
                     <div className="two-cards"> 
                         <div>
@@ -173,19 +179,17 @@ class Game extends React.Component {
                         </div>
                     </div>
 
-                    {this.nextQuestionButton()}
-
-                    <div className="message-area">
-                        {this.state.message}
+                    <div className="optional">
+                        {this.nextQuestionButton()}
+                        <div className="message-area">
+                            {this.state.message}
+                        </div>
                     </div>
+
 
                 </div>
             );
-        };
-
-
-
-
+        }
     }
 
   
@@ -199,10 +203,12 @@ class Game extends React.Component {
             <div className = "game-area">
                 <KeyHandler keyEventName={KEYPRESS} keyValue="s" onKeyHandle={this.p1input} />
                 <KeyHandler keyEventName={KEYPRESS} keyValue="k" onKeyHandle={this.p2input} />
+                <KeyHandler keyEventName={KEYPRESS} keyValue="v" onKeyHandle={this.newTurn} />
 
                 <div className = 'player'> 
                     <p className="player-name"> Player 1 </p>
                     <p> Points: {this.state.p1points} </p>
+                    {this.instructions('S')}
                 </div>
 
                 <div className = "game-board">
@@ -212,6 +218,7 @@ class Game extends React.Component {
                 <div className = 'player'>
                     <p className="player-name"> Player 2 </p>
                     <p> Points: {this.state.p2points} </p>
+                    {this.instructions('K')}
                 </div>
             </div>
         );
