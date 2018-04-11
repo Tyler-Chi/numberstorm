@@ -73,9 +73,15 @@ class Solver extends React.Component {
 
         } else if ( this.state.solutionString.length > 0){
 
+            let addition = '';
+
+            if (this.state.solutionString !== 'unsolvable'){
+                addition = ' = 24';
+            }
+
             return (
                 <div className='solution-string-area'>
-                    <p className="solution-string"> {this.state.solutionString} </p>
+                    <p className="solution-string"> {this.state.solutionString + addition}</p>
                 </div>
             );
         }
