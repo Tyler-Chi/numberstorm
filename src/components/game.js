@@ -40,6 +40,10 @@ class Game extends React.Component {
         } else {
             this.setState({ solutions: this.props.state.solutions });
         }
+
+        let questionIdx = Math.round(Math.random() * this.state.solutions.length - 1);
+
+        this.setState({currentQuestion: this.state.solutions[questionIdx]});
     }
 
     p1input(event){
@@ -49,7 +53,7 @@ class Game extends React.Component {
         if (this.state.buttonPressed === 0){
             let currentPoints = this.state.p1points;
             currentPoints += 1; 
-            this.setState({ nextQuestionButton: true , p1points: currentPoints, buttonPressed: 1, message: "player 1 has buzzed in!"});
+            this.setState({ nextQuestionButton: true , p1points: currentPoints, buttonPressed: 1, message: "Player 1 has buzzed in!"});
         }
 
     }
@@ -61,7 +65,7 @@ class Game extends React.Component {
         if (this.state.buttonPressed === 0) {
             let currentPoints = this.state.p2points;
             currentPoints += 1; 
-            this.setState({ nextQuestionButton: true, p2points: currentPoints, buttonPressed: 2, message: "player 2 has buzzed in!" });
+            this.setState({ nextQuestionButton: true, p2points: currentPoints, buttonPressed: 2, message: "Player 2 has buzzed in!" });
         }
 
     }
@@ -69,7 +73,7 @@ class Game extends React.Component {
     nextQuestionButton(){
         if(this.state.nextQuestionButton){
             return (
-                <p onClick = {this.newTurn}> Next Question! [V]</p>
+                <p  className = "next-question" onClick = {this.newTurn}> Next Question! [V]</p>
             );
         }
     }
@@ -180,9 +184,9 @@ class Game extends React.Component {
                     </div>
 
                     <div className="optional">
-                        {this.nextQuestionButton()}
                         <div className="message-area">
-                            {this.state.message}
+                            {this.nextQuestionButton()} 
+                            {this.state.message} 
                         </div>
                     </div>
 
