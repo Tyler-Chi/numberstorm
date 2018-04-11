@@ -19,7 +19,6 @@ class List extends React.Component{
             this.setState({loading: true});
             this.props.fetchSolutions()
                 .then(()=> {
-
                     this.setState({solutions: this.props.state.solutions, loading: false});
                 }
             );

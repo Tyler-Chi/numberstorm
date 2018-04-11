@@ -2,6 +2,7 @@ import React from 'react';
 import '../stylesheets/mainarea.css';
 import Solver from './solver';
 import List from './list';
+import Game from './game';
 import { connect } from 'react-redux';
 
 
@@ -14,22 +15,14 @@ class Mainarea extends React.Component {
 
     router(){
         switch (this.props.state.navigation){
-
             case 'solver':
-                return (
-                    <Solver />
-                );
-            
+                return ( <Solver />);            
             case 'list':
-                return (
-                    < List />
-                );
-            
-
+                return ( < List /> );
+            case 'game':
+                return ( < Game /> );
             default:
-                return (
-                    <List />
-                );
+                return (  <Game />  );
         }
     }
 

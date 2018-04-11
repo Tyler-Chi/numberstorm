@@ -33,16 +33,12 @@ class Navbar extends React.Component {
                         Solver
                     </p>
 
-                    <p >
-                        New Problem
+                    <p onClick={() => this.props.navigate('game')}>
+                        Compete!
                     </p>
 
                     <p onClick={()=> this.props.navigate('list')}>
                         List of Problems
-                    </p>
-
-                    <p>
-                        General Strategies
                     </p>
 
                     <p>

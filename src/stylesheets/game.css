@@ -1,0 +1,33 @@
+.game-area {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(196, 195, 195, 0.5);
+    width: 1000px;
+    margin-top: 5px;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    height: 92%;
+}
+
+.player {
+    flex: 2;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+}
+
+.game-board {
+    flex: 5;
+    height: 100%;
+    background-color: rgb(173, 173, 201);
+}
+
+.player-name {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 1.5px solid black;
+}
