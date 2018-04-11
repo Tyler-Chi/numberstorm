@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/mainarea.css';
 import Solver from './solver';
+import List from './list';
 import { connect } from 'react-redux';
 
 
@@ -21,13 +22,13 @@ class Mainarea extends React.Component {
             
             case 'list':
                 return (
-                    <p> hello world </p>
+                    < List />
                 );
             
 
             default:
                 return (
-                    <Solver />
+                    <List />
                 );
         }
     }

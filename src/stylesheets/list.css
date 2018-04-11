@@ -1,0 +1,10 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(196, 195, 195, 0.5);
+    width: 1000px;
+    margin-top: 5px;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    height: 92%;
+    align-items: center;
+}

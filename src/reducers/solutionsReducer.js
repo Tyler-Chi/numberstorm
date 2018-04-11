@@ -1,12 +1,14 @@
 import merge from 'lodash/merge';
 
-export default (oldState = {}, action) => {
+export default (oldState = [], action) => {
 
     Object.freeze(oldState);
 
-    let newState = Object.assign({}, oldState);
-
     switch (action.type) {
+
+        case 'RECEIVE_SOLUTIONS':
+
+            return action.payload;
 
         default:
             return oldState;
