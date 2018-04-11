@@ -12,11 +12,12 @@ class Game extends React.Component {
             solutions: [],
             currentQuestion: {},
             gameCycle: false,
-            p1points: 0,
+            p1points: 3,
             p2points: 0,
             message:'',
             buttonPressed: 0,
-            nextQuestionButton: false
+            nextQuestionButton: false,
+            newGame: false
         };
         //button pressed defaults to 0, temporarily goes to 1 or 2 when player presses.
         this.gameLogic = this.gameLogic.bind(this);
@@ -24,6 +25,7 @@ class Game extends React.Component {
         this.p1input = this.p1input.bind(this);
         this.p2input = this.p2input.bind(this);
         this.nextQuestionButton = this.nextQuestionButton.bind(this);
+        this.newGame = this.newGame.bind(this);
     }
 
     componentWillMount() {
@@ -66,31 +68,52 @@ class Game extends React.Component {
     nextQuestionButton(){
         if(this.state.nextQuestionButton){
             return (
-                <p> Next Question!</p>
-            )
+                <p onClick = {this.newTurn}> Next Question!</p>
+            );
         }
     }
 
-    newTurn(inGame) {
+
+
+    newTurn() {
+
+        console.log('new turn was triggered');
 
         let questionIdx = Math.round(Math.random() * this.state.solutions.length - 1);
 
-        this.setState({ buttonPressed: 0, message: '', gameCycle: true, currentQuestion: this.state.solutions[questionIdx] });
+        this.setState({ nextQuestionButton: false , buttonPressed: 0, message: '', nextGame: false, gameCycle: true, currentQuestion: this.state.solutions[questionIdx] });
+
+    }
+
+    newGame(){
+        let questionIdx = Math.round(Math.random() * this.state.solutions.length - 1);
+
+
+        this.setState({ p1points: 0, p2points: 0, nextQuestionButton: false, buttonPressed: 0, message: '', nextGame: false, gameCycle: true, currentQuestion: this.state.solutions[questionIdx] });
 
     }
 
     gameLogic(){
-        if (this.state.gameCycle === false){
+        if (this.state.gameCycle === false && this.state.newGame === false ){
             return (
                 <p onClick={this.newTurn}> Play Game! </p>
             );
         }
 
-        if (this.state.p1points > 4){
-            this.setState({gameCycle: false, message: "player 1 has won!"});
+        if (this.state.gameCycle === false && this.state.newGame === true) {
+            return (
+                <div>
+                    <p onClick={this.newGame}> Play again! </p>
+                    <p> {this.state.message} </p>
+                </div>
+            );
         }
-        if (this.state.p2points > 4) {
-            this.setState({ gameCycle: false, message: "player 2 has won!" });
+
+        if (this.state.p1points  === 5 ){
+            this.setState({ gameCycle: false, message: "player 1 has won!", newGame: true });
+        }
+        if (this.state.p2points === 5) {
+            this.setState({  gameCycle: false, message: "player 2 has won!"  , newGame: true});
         }
 
         //render the cards
