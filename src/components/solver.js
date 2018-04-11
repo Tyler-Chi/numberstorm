@@ -67,7 +67,7 @@ class Solver extends React.Component {
         if (this.state.loading === true){
             return (
                 <div className = 'spinner-area'>
-                    <i class="fas fa-spinner fa-pulse"></i>
+                    <i className="fas fa-spinner fa-pulse"></i>
                 </div>
             );
 
