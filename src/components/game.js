@@ -101,10 +101,39 @@ class Game extends React.Component {
         }
 
         if (this.state.gameCycle === false && this.state.newGame === true) {
+
+            const { currentQuestion } = this.state;
+            const numbers = currentQuestion.numbers.split("&");
+
             return (
                 <div>
+                    <div className='card-area'>
+                        <p> Cards: </p>
+
+                        <div className="two-cards">
+                            <div>
+                                {numbers[0]}
+                            </div>
+                            <div>
+                                {numbers[1]}
+                            </div>
+                        </div>
+                        <div className="two-cards">
+                            <div>
+                                {numbers[2]}
+                            </div>
+                            <div>
+                                {numbers[3]}
+                            </div>
+                        </div>
+
+                        <p> {this.state.message} </p>
+
+                    </div>
+
+
                     <p onClick={this.newGame}> Play again! </p>
-                    <p> {this.state.message} </p>
+                   
                 </div>
             );
         }
