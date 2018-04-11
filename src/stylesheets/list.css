@@ -8,3 +8,33 @@
     height: 92%;
     align-items: center;
 }
+
+.solution-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 93%;
+    width: 80%;
+    background-color: red;
+    overflow: scroll;
+}
+
+.solution-list li {
+    width: 80%;
+}
+
+.individual-solution-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.solution-numbers {
+    width: 50%;
+    background-color: blue;
+}
+
+.solution-solution {
+    background-color: blue;
+   width: 50%;
+}

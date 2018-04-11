@@ -2,6 +2,7 @@ import React from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import '../stylesheets/list.css';
+import Solution from './solution';
 
 class List extends React.Component{
     constructor(props){
@@ -18,9 +19,12 @@ class List extends React.Component{
             this.setState({loading: true});
             this.props.fetchSolutions()
                 .then(()=> {
+
                     this.setState({solutions: this.props.state.solutions, loading: false});
                 }
             );
+        } else {
+            this.setState({solutions: this.props.state.solutions});
         }
     }
 
@@ -36,22 +40,20 @@ class List extends React.Component{
 
     render(){
 
-        let solutions = this.state.solutions;
-        let solvable = {};
-        for (var i = 0 ; i < solutions.length ; i++){
-            let solution = solutions[i];
-            if (solution.solvable){
-                solvable[solution.numbers] = solution;
-            }
-        }
+        console.log('render is being run');
 
         return (
             <div className="list">
                 List of Solved Problems
                 {this.renderList()}
-                {Object.values(solvable).map(solution => (
-                    <p> hello world </p>
+                <ul className = 'solution-list'>
+                {this.state.solutions.map(solution => (
+                    <li>
+                        <Solution solution={solution}/>
+                    </li>
                 ))}
+                </ul>
+
             </div>
         );
     }
