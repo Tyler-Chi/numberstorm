@@ -14,27 +14,43 @@
     flex-direction: column;
     align-items: center;
     height: 93%;
-    width: 80%;
-    background-color: red;
+    width: 70%;
+    /* background-color: red; */
     overflow: scroll;
+    background-color: rgba(196, 195, 195, 0.5);
+    padding-top: 15px;
 }
 
 .solution-list li {
     width: 80%;
+    list-style-type: none;
 }
 
 .individual-solution-area {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-family: 'Ubuntu', sans-serif;
+    border: 1px solid black;
 }
 
 .solution-numbers {
-    width: 50%;
-    background-color: blue;
+    /* width: 50%; */
+    flex: 3;
+    padding: 0px;
+    padding-left: 15px;
+
 }
 
 .solution-solution {
-    background-color: blue;
-   width: 50%;
+    padding: 0px;
+    flex: 2;
+    padding-right: 15px;
+    /* width: 50%; */
+}
+
+.list-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    margin-bottom: 0px;
 }

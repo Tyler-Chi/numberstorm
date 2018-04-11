@@ -34,7 +34,18 @@ class List extends React.Component{
             return (
                 <div> Loading </div>
             );    
-        } 
+        } else {
+
+            return (
+                <ul className='solution-list'>
+                    {this.state.solutions.map(solution => (
+                        <li>
+                            <Solution solution={solution} />
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
 
     }
 
@@ -44,16 +55,11 @@ class List extends React.Component{
 
         return (
             <div className="list">
-                List of Solved Problems
-                {this.renderList()}
-                <ul className = 'solution-list'>
-                {this.state.solutions.map(solution => (
-                    <li>
-                        <Solution solution={solution}/>
-                    </li>
-                ))}
-                </ul>
 
+
+                <p className = 'list-title'> List of Solved Problems </p>
+
+                {this.renderList()}
             </div>
         );
     }
