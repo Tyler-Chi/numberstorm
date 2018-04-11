@@ -46,7 +46,7 @@ class Game extends React.Component {
         if (this.state.buttonPressed === 0){
             let currentPoints = this.state.p1points;
             currentPoints += 1; 
-            this.setState({p1points: currentPoints, buttonPressed: 1, message: "player 1 has buzzed in!"});
+            this.setState({ nextQuestionButton: true , p1points: currentPoints, buttonPressed: 1, message: "player 1 has buzzed in!"});
         }
 
     }
@@ -71,11 +71,11 @@ class Game extends React.Component {
         }
     }
 
-    newTurn() {
+    newTurn(inGame) {
 
         let questionIdx = Math.round(Math.random() * this.state.solutions.length - 1);
 
-        this.setState({ nextQuestionButton: true, buttonPressed: 0, message: '', gameCycle: true, currentQuestion: this.state.solutions[questionIdx] });
+        this.setState({ buttonPressed: 0, message: '', gameCycle: true, currentQuestion: this.state.solutions[questionIdx] });
 
     }
 
