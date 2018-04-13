@@ -22,7 +22,7 @@ class Mainarea extends React.Component {
             case 'game':
                 return ( < Game /> );
             default:
-                return (  <Game />  );
+                return (  <Solver />  );
         }
     }
 
