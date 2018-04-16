@@ -10,12 +10,19 @@ html, body, main {
     height: 40px;
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     /* background: rgb(221, 221, 221); */
     background: white;
     box-shadow: 0px 0px 10px rgb(14, 13, 13);
     z-index: 1;
     padding: 3px;
     /* color: red; */
+=======
+    background: rgb(221, 221, 221);
+    box-shadow: 0px 0px 10px rgb(14, 13, 13);
+    z-index: 1;
+    padding: 3px;
+>>>>>>> 084f750c175653bcbe0587c6ac3bc7746c806e93
 }
 
 .navbar-title {
@@ -25,7 +32,10 @@ html, body, main {
     font-size: 30px;
     margin-top: 2px;
     letter-spacing: 1px;
+<<<<<<< HEAD
    
+=======
+>>>>>>> 084f750c175653bcbe0587c6ac3bc7746c806e93
 }
 
 .navbar-buttons {
@@ -41,6 +51,7 @@ html, body, main {
 
 .navbar-buttons p {
     cursor: pointer;
+<<<<<<< HEAD
     /* padding-left: 10px;
     padding-right: 10px;
     padding-top: 12px;
@@ -48,3 +59,15 @@ html, body, main {
     transition: 0.5s; */
 }
 
+=======
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    transition: 0.5s;
+}
+
+.hover {
+    border: 1px solid black;
+}
+>>>>>>> 084f750c175653bcbe0587c6ac3bc7746c806e93

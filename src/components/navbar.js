@@ -21,7 +21,11 @@ class Navbar extends React.Component {
             <div className="navbar-area">
 
                 <p className="navbar-title">
+<<<<<<< HEAD
                     NumberStorm
+=======
+                    NumberStorm!
+>>>>>>> 084f750c175653bcbe0587c6ac3bc7746c806e93
                 </p>
 
                 <div className="navbar-buttons" >
