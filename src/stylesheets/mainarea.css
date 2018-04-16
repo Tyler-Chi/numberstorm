@@ -1,0 +1,9 @@
+.main-area {
+    background-image: url('../images/cool_image.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,124 @@
+.solver {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(196, 195, 195, 0.5);
+    width: 1000px;
+    margin-top: 5px;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    height: 92%;
+    align-items: center;
+}
+
+.solver-title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    width: 100%;
+}
+
+.solver-input-area {
+    /* background-color: red; */
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    justify-content: space-around;
+    width: 90%;
+
+}
+
+.solver-input-area div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.solver-input-area input{
+    font-size: 50px;
+    padding: 0px;
+    text-align: center;
+    width: 130px;
+    height: 250px;
+    font-style: bolder;
+    border: 0.5px solid rgb(181, 181, 181);
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    
+}
+
+.solver-submit {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #84a6d2;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    transition: 0.2s;
+    color: black;
+}
+
+.solver-submit:hover {
+    box-shadow: 0px 0px;
+    transition: 0.2s;
+    cursor: pointer;
+  
+}
+
+.solver-button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.fa-angle-up {
+    color: rgb(0, 0, 0);
+    font-size: 100px;
+    margin-bottom: -23px;
+    margin-top: -30px;
+}
+
+
+.fas:before {
+    cursor: pointer;
+}
+
+.fa-angle-down {
+    color: black;
+    font-size: 100px;
+    margin-top: -20px;
+    margin-bottom: -26px;
+}
+
+.fa-spinner {
+    font-size: 40px;
+    font-weight: 1000px;
+}
+
+.spinner-area {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-top: 30px;
+}
+
+.solution-string-area {
+    width: 50%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+}

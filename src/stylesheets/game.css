@@ -1,0 +1,147 @@
+.game-area {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(196, 195, 195, 0.2);
+    width: 1000px;
+    margin-top: 5px;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    height: 92%;
+}
+
+.player {
+    flex: 2;
+    height: 50%;
+    margin-top: 10%;
+    background-color: rgb(250, 250, 250, 0.5);
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    
+}
+
+.game-board {
+    flex: 5;
+    height: 95%;
+    margin-top: 1.5%;
+    background-color: rgb(173, 173, 201, 0.8);
+    /* background-color: rgba(206, 206, 222, 0.8); */
+    /* background-image: url('../images/paper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    /* border: 1px solid black; */
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+
+}
+
+.player-name {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 1.5px solid black;
+    font-size: 30px;
+}
+
+.card-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: blue; */
+    height: 600px;
+}
+
+.two-cards {
+    display: flex;
+    flex-direction: row;
+    /* background-color: red; */
+    width: 80%;
+    height: 40%;
+    justify-content: space-around;
+    align-items: space-around;
+}
+
+.two-cards div {
+    background-color: white;
+    width: 50%;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+.optional {
+    height: 100px;
+}
+
+
+.instructions-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.letter {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.start-game {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    
+}
+
+.start-game-text {
+    background-color:white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
+
+}
+
+.start-game-text:hover {
+    background-color: rgb(29, 208, 29);
+    transition: 0.5s;
+}
+
+.card-area-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    /* color: white; */
+
+}
+
+.message-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.next-question {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.next-question:hover {
+    background-color: rgb(29, 208, 29);
+    transition: 0.5s;
+}
