@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../stylesheets/navbar.css';
 import * as actions from '../actions';
-import $ from "jquery";
+import $ from 'jquery';
 import Location from './location';
-
 
 class Navbar extends React.Component {
 
@@ -45,13 +44,10 @@ class Navbar extends React.Component {
     }
 }
 
-
-const mapStateToProps = (state) => {
-    return {
-        state
-    };
+const mapStateToProps = state => {
+  return {
+    state
+  };
 };
 
-
-
-export default connect(mapStateToProps,actions)(Navbar);
+export default connect(mapStateToProps, actions)(Navbar);
