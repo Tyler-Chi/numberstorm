@@ -10,10 +10,12 @@ html, body, main {
     height: 40px;
     display: flex;
     flex-direction: row;
-    background: rgb(221, 221, 221);
+    /* background: rgb(221, 221, 221); */
+    background: white;
     box-shadow: 0px 0px 10px rgb(14, 13, 13);
     z-index: 1;
     padding: 3px;
+    /* color: red; */
 }
 
 .navbar-title {
@@ -23,6 +25,7 @@ html, body, main {
     font-size: 30px;
     margin-top: 2px;
     letter-spacing: 1px;
+   
 }
 
 .navbar-buttons {

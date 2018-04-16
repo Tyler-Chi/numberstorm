@@ -5,6 +5,10 @@
 }
 
 .unselected {
-    color: black;
+    /* color: black; */
     transition: 0.5s;
+}
+
+.unselected:hover{
+    color: rgb(112, 167, 225);
 }
