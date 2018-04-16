@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import '../stylesheets/navbar.css';
 import * as actions from '../actions';
 import $ from "jquery";
+import Location from './location';
 
 
 class Navbar extends React.Component {
@@ -14,6 +15,8 @@ class Navbar extends React.Component {
 
     render() {
 
+        console.log('navbar props',this.props);
+
         return (
             <div className="navbar-area">
 
@@ -22,17 +25,14 @@ class Navbar extends React.Component {
                 </p>
 
                 <div className="navbar-buttons" >
-                    <p id="solver" onClick ={() => this.props.navigate('solver')}>
-                        Solver
-                    </p>
+                   
 
-                    <p onClick={() => this.props.navigate('game')}>
-                        Compete!
-                    </p>
+                    <Location navigation={this.props.state.navigation} name={"Solver"} navigate={this.props.navigate}/>
+                 
+                    <Location navigation={this.props.state.navigation} name={"Compete"} navigate={this.props.navigate} />
 
-                    <p onClick={()=> this.props.navigate('list')}>
-                        List of Problems
-                    </p>
+                    <Location navigation={this.props.state.navigation} name={"List"} navigate={this.props.navigate} />
+
 
                     <p>
                         Solution Algorithm

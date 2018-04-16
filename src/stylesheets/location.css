@@ -1,0 +1,10 @@
+.selected {
+    color: rgb(112, 167, 225);
+    transition: 0.5s;
+    /* border-bottom: 1px solid rgb(112, 167, 225); */
+}
+
+.unselected {
+    color: black;
+    transition: 0.5s;
+}

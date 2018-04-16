@@ -1,4 +1,4 @@
-export default (oldState = "", action) => {
+export default (oldState = "Compete", action) => {
 
     Object.freeze(oldState);
 

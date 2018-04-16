@@ -38,15 +38,10 @@ html, body, main {
 
 .navbar-buttons p {
     cursor: pointer;
-    padding-left: 10px;
+    /* padding-left: 10px;
     padding-right: 10px;
     padding-top: 12px;
     padding-bottom: 13px;
-    transition: 0.5s;
+    transition: 0.5s; */
 }
 
-/* .navbar-buttons p:hover{
-    color: #507e8e;
-    transition: 0.5s;
-
-} */
