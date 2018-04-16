@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../stylesheets/navbar.css';
 import * as actions from '../actions';
+import $ from "jquery";
 
 
 class Navbar extends React.Component {
@@ -10,16 +11,8 @@ class Navbar extends React.Component {
         super(props);
     }
 
-    componentWillMount() {
-        console.log(this.props);
-        // console.log(this.props.state.location === {});
-    }
-
-
 
     render() {
-
-        console.log(this.props);
 
         return (
             <div className="navbar-area">
@@ -29,7 +22,7 @@ class Navbar extends React.Component {
                 </p>
 
                 <div className="navbar-buttons" >
-                    <p onClick ={() => this.props.navigate('solver')}>
+                    <p id="solver" onClick ={() => this.props.navigate('solver')}>
                         Solver
                     </p>
 

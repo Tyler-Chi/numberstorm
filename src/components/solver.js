@@ -39,6 +39,9 @@ class Solver extends React.Component {
 
     changeNumber(index,direction){
         let currentNumber = this.state.numbers[index];
+
+        currentNumber = parseInt(currentNumber);
+
         currentNumber += direction;
         let currentArray = this.state.numbers;
         currentArray[index] = currentNumber;

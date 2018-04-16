@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/react-fontawesome": "0.0.18",
     "axios": "^0.18.0",
+    "jquery": "^3.3.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-key-handler": "^1.0.1",
