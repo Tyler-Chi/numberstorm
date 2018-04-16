@@ -2,60 +2,51 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../stylesheets/navbar.css';
 import * as actions from '../actions';
-import $ from "jquery";
+import $ from 'jquery';
 import Location from './location';
 
-
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props);
-    }
+  render() {
+    console.log('navbar props', this.props);
 
+    return (
+      <div className="navbar-area">
+        <p className="navbar-title">NumberStorm!</p>
 
-    render() {
+        <div className="navbar-buttons">
+          <Location
+            navigation={this.props.state.navigation}
+            name={'SOLVER'}
+            navigate={this.props.navigate}
+          />
 
-        console.log('navbar props',this.props);
+          <Location
+            navigation={this.props.state.navigation}
+            name={'COMPETE'}
+            navigate={this.props.navigate}
+          />
 
-        return (
-            <div className="navbar-area">
+          <Location
+            navigation={this.props.state.navigation}
+            name={'LIST'}
+            navigate={this.props.navigate}
+          />
 
-                <p className="navbar-title">
-<<<<<<< HEAD
-                    NumberStorm
-=======
-                    NumberStorm!
->>>>>>> 084f750c175653bcbe0587c6ac3bc7746c806e93
-                </p>
-
-                <div className="navbar-buttons" >
-                   
-
-                    <Location navigation={this.props.state.navigation} name={"Solver"} navigate={this.props.navigate}/>
-                 
-                    <Location navigation={this.props.state.navigation} name={"Compete"} navigate={this.props.navigate} />
-
-                    <Location navigation={this.props.state.navigation} name={"List"} navigate={this.props.navigate} />
-
-
-                    <p>
-                        Solution Algorithm
-                    </p>
-                </div>
-
-
-            </div>
-        );
-    }
+          <p>ABOUT</p>
+        </div>
+      </div>
+    );
+  }
 }
 
-
-const mapStateToProps = (state) => {
-    return {
-        state
-    };
+const mapStateToProps = state => {
+  return {
+    state
+  };
 };
 
-
-
-export default connect(mapStateToProps,actions)(Navbar);
+export default connect(mapStateToProps, actions)(Navbar);
