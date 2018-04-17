@@ -195,7 +195,9 @@ class Solver extends React.Component {
           </p>
         </div>
 
-        {this.solutionArea()}
+
+          {this.solutionArea()}
+    
       </div>
     );
   }
