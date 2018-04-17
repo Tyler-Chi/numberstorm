@@ -7,6 +7,20 @@
     box-shadow: 3px 3px 2px rgb(0, 0, 0, 0.2);
     height: 92%;
     align-items: center;
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    /* width: 300%;  */
+  }
+
+  to {
+    margin-left: 0%;
+    /* width: 100%; */
+  }
 }
 
 .solver-title {
