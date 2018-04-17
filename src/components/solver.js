@@ -88,6 +88,19 @@ class Solver extends React.Component {
                 console.log('here is the newString',newString);
 
                 newString = newString.slice(2,-2);
+
+                let els = newString.split(' ');
+
+                for (var i = 0; i < els.length; i++) {
+
+                    let el = els[i];
+
+                    if (parseInt(el)) {
+                        els[i] = parseInt(el);
+                    }
+                }
+
+                newString = els.join(' ');
         
                 return (
                     <div className='solution-string-area'>
