@@ -15,11 +15,11 @@ class Mainarea extends React.Component {
 
     router(){
         switch (this.props.state.navigation){
-            case 'Solver':
+            case 'SOLVER':
                 return ( <Solver />);            
-            case 'List':
+            case 'LIST':
                 return ( < List /> );
-            case 'Compete':
+            case 'COMPETE':
                 return ( < Game /> );
             default:
                 return ( <Solver /> );
