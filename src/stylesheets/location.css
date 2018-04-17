@@ -1,11 +1,15 @@
 .selected {
-  color: #6f2232;
-  transition: 0.5s; }
+  color: #5d001e;
+  transition: 0.5s;
+  text-decoration: underline;
+}
 
 .unselected {
-  transition: 0.5s; }
+  transition: 0.5s;
+}
 
 .unselected:hover {
-  color: #6f2232; }
+  color: #5d001e;
+}
 
 /*# sourceMappingURL=location.css.map */
