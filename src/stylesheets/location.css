@@ -1,14 +1,11 @@
 .selected {
-    color: rgb(112, 167, 225);
-    transition: 0.5s;
-    /* border-bottom: 1px solid rgb(112, 167, 225); */
-}
+  color: #6f2232;
+  transition: 0.5s; }
 
 .unselected {
-    /* color: black; */
-    transition: 0.5s;
-}
+  transition: 0.5s; }
 
-.unselected:hover{
-    color: rgb(112, 167, 225);
-}
+.unselected:hover {
+  color: #6f2232; }
+
+/*# sourceMappingURL=location.css.map */

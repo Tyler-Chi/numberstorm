@@ -15,9 +15,7 @@ class Navbar extends React.Component {
 
     return (
       <div className="navbar-area">
-        <p className="navbar-title">NumberStorm!</p>
-
-        <div className="navbar-buttons">
+        <div className="navbar-buttons-left">
           <Location
             navigation={this.props.state.navigation}
             name={'SOLVER'}
@@ -29,7 +27,10 @@ class Navbar extends React.Component {
             name={'COMPETE'}
             navigate={this.props.navigate}
           />
+        </div>
+        <div className="navbar-title">NUMBERSTORM</div>
 
+        <div className="navbar-buttons-right">
           <Location
             navigation={this.props.state.navigation}
             name={'LIST'}
