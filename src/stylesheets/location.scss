@@ -1,0 +1,14 @@
+@import 'named_variables';
+
+.selected {
+  color: $nav-color-darker;
+  transition: 0.5s;
+}
+
+.unselected {
+  transition: 0.5s;
+}
+
+.unselected:hover {
+  color: $nav-color-darker;
+}

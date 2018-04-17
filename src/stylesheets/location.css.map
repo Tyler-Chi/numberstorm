@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,SAAU;EACR,KAAK,ECDY,OAAO;EDExB,UAAU,EAAE,IAAI;;AAGlB,WAAY;EACV,UAAU,EAAE,IAAI;;AAGlB,iBAAkB;EAChB,KAAK,ECVY,OAAO",
+"sources": ["location.scss","named_variables.scss"],
+"names": [],
+"file": "location.css"
+}

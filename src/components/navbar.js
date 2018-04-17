@@ -6,42 +6,42 @@ import $ from 'jquery';
 import Location from './location';
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props);
-    }
+  render() {
+    console.log('navbar props', this.props);
 
+    return (
+      <div className="navbar-area">
+        <div className="navbar-buttons-left">
+          <Location
+            navigation={this.props.state.navigation}
+            name={'SOLVER'}
+            navigate={this.props.navigate}
+          />
 
-    render() {
+          <Location
+            navigation={this.props.state.navigation}
+            name={'COMPETE'}
+            navigate={this.props.navigate}
+          />
+        </div>
+        <div className="navbar-title">NUMBERSTORM</div>
 
-        console.log('navbar props',this.props);
+        <div className="navbar-buttons-right">
+          <Location
+            navigation={this.props.state.navigation}
+            name={'LIST'}
+            navigate={this.props.navigate}
+          />
 
-        return (
-            <div className="navbar-area">
-
-                <p className="navbar-title">
-                    NumberStorm!
-                </p>
-
-                <div className="navbar-buttons" >
-                   
-
-                    <Location navigation={this.props.state.navigation} name={"Solver"} navigate={this.props.navigate}/>
-                 
-                    <Location navigation={this.props.state.navigation} name={"Compete"} navigate={this.props.navigate} />
-
-                    <Location navigation={this.props.state.navigation} name={"List"} navigate={this.props.navigate} />
-
-
-                    <p>
-                        Solution Algorithm
-                    </p>
-                </div>
-
-
-            </div>
-        );
-    }
+          <p>ABOUT</p>
+        </div>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {
