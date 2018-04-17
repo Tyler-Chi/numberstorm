@@ -2,11 +2,13 @@ html,
 body,
 main {
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .navbar-area {
   background: white;
-  color: #f78888;
+  /* color: #f78888; */
+  color: #ee4c7c;
   font-weight: 900;
   height: 60px;
   display: flex;
@@ -14,12 +16,14 @@ main {
   justify-content: center;
   align-items: flex-end;
   z-index: 1;
-  padding-top: 10px; }
+  padding-top: 50px;
+}
 
 .navbar-title {
   font-family: Fugaz One, cursive;
   font-size: 40px;
-  color: #1a1a1d; }
+  color: #1a1a1d;
+}
 
 .navbar-buttons-left {
   display: flex;
@@ -27,7 +31,9 @@ main {
   align-items: center;
   align-self: flex-start;
   font-family: 'PT Sans Caption', sans-serif;
-  padding: 0 30px; }
+  font-size: 18px;
+  padding: 0 20px;
+}
 
 .navbar-buttons-right {
   display: flex;
@@ -35,16 +41,20 @@ main {
   align-items: center;
   align-self: flex-start;
   font-family: 'PT Sans Caption', sans-serif;
-  padding: 0 30px; }
+  font-size: 18px;
+  padding: 0 20px;
+}
 
 .navbar-buttons-left p,
 .navbar-buttons-right p {
   cursor: pointer;
   padding: 0 30px;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
 
 .hover {
-  border: 1px solid black; }
+  border: 1px solid black;
+}
 
 /*# sourceMappingURL=navbar.css.map */
 

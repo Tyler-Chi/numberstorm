@@ -114,10 +114,6 @@ class Solver extends React.Component {
   render() {
     return (
       <div className="solver">
-        <p className="solver-title">
-          {' '}
-          the Solver makes 24 using all four numbers
-        </p>
         <div className="solver-input-area">
           <div>
             <p
@@ -184,20 +180,23 @@ class Solver extends React.Component {
           </div>
         </div>
 
+        <p className="solver-title">
+          {' '}
+          the Solver makes 24 using all four numbers
+        </p>
+
         <div className="solver-button-area">
           <p className="solver-submit" onClick={this.handleSubmit}>
             {' '}
-            Submit Numbers!{' '}
+            Submit Numbers{' '}
           </p>
           <p className="solver-submit" onClick={() => this.generateRandom(0)}>
             {' '}
-            Randomize!{' '}
+            Randomize{' '}
           </p>
         </div>
 
-
-          {this.solutionArea()}
-    
+        {this.solutionArea()}
       </div>
     );
   }
