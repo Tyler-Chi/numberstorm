@@ -1,6 +1,8 @@
 import React from 'react';
 import '../stylesheets/solver.css';
 import axios from 'axios';
+import parseNumbers from './parser';
+
 
 class Solver extends React.Component {
 
@@ -12,6 +14,8 @@ class Solver extends React.Component {
             solutionString:'',
             loading: false
         };
+
+       
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,17 +80,41 @@ class Solver extends React.Component {
 
         } else if ( this.state.solutionString.length > 0){
 
-            let addition = '';
+    
 
             if (this.state.solutionString !== 'unsolvable'){
-                addition = ' = 24';
-            }
+                let newString = parseNumbers(this.state.solutionString);
+        
+                console.log('here is the newString',newString);
 
-            return (
-                <div className='solution-string-area'>
-                    <p className="solution-string"> {this.state.solutionString + addition}</p>
-                </div>
-            );
+                newString = newString.slice(2,-2);
+
+                let els = newString.split(' ');
+
+                for (var i = 0; i < els.length; i++) {
+
+                    let el = els[i];
+
+                    if (parseInt(el)) {
+                        els[i] = parseInt(el);
+                    }
+                }
+
+                newString = els.join(' ');
+        
+                return (
+                    <div className='solution-string-area'>
+                        <p className="solution-string"> {newString}</p>
+                    </div>
+                );
+
+            } else {
+                return (
+                    <div className='solution-string-area'>
+                        <p className="solution-string"> {this.state.solutionString}</p>
+                    </div>
+                );
+            }
         }
 
 
@@ -95,7 +123,7 @@ class Solver extends React.Component {
 
     render(){
 
-        console.log(this.state);
+    
 
         return(
             <div className="solver">
