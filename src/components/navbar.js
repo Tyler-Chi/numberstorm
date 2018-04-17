@@ -6,7 +6,6 @@ import $ from 'jquery';
 import Location from './location';
 
 class Navbar extends React.Component {
-<<<<<<< HEAD
   constructor(props) {
     super(props);
   }
@@ -43,44 +42,6 @@ class Navbar extends React.Component {
       </div>
     );
   }
-=======
-
-    constructor(props) {
-        super(props);
-    }
-
-
-    render() {
-
-        console.log('navbar props',this.props);
-
-        return (
-            <div className="navbar-area">
-
-                <p className="navbar-title">
-                    NumberStorm!
-                </p>
-
-                <div className="navbar-buttons" >
-                   
-
-                    <Location navigation={this.props.state.navigation} name={"Solver"} navigate={this.props.navigate}/>
-                 
-                    <Location navigation={this.props.state.navigation} name={"Compete"} navigate={this.props.navigate} />
-
-                    <Location navigation={this.props.state.navigation} name={"List"} navigate={this.props.navigate} />
-
-
-                    <p>
-                        Solution Algorithm
-                    </p>
-                </div>
-
-
-            </div>
-        );
-    }
->>>>>>> f7d5d36de68d5c1cf0e790473394b0e2d47102c2
 }
 
 const mapStateToProps = state => {
